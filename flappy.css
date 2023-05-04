@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'pixel';
+    src: url('.../fonts/Pixel.ttf')
+}
+
+[wm-flappy] { /*Area do jogo*/
+    position: relative; /*Posição relativa*/
+    border: 5px solid dodgerblue;
+    height: 700px; /*Altura*/
+    width: 1200px; /*Largura*/
+    margin: 15px; /*Espaçamento do titulo*/
+    background-color: deepskyblue;
+    overflow: hidden; /*Qualquer coisa que estiver fora da div vão desaparecer.*/
+}
+
+.passaro {
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px); /*Como ele vai ser alinhado pela esquerda com esse calculo ele voltara 30px e ficará no meio*/
+}
+
+.par-de-barreiras { /*O par das barreiras que foi definido*/
+    position: absolute;
+    top: 0; /*Alinhado com o topo, baseado na area do jogo*/
+    height: 100%; /*Altura inteira*/
+    display: flex; /*Dentro do par de barreiras será usado flex-box*/
+    flex-direction: column; /*Vai ser organizado na coluna ou seja VERTICAL*/
+    justify-content: space-between;  /*Com essa propriedade os itens chamado de "Barreiras" terão um espaço entre eles e o passaro ficara no meio*/
+}
+
+.barreira { /*Propria barreira*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda { /*As bordas da barreira*/
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #A5E83E);
+    border: 2px solid black;
+}
+
+.barreira .corpo { /*O corpo da barreira*/
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #A5E83E);
+    border-left: 2px solid #000; 
+    border-right: 2px solid #000;
+}
+
+.progresso{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: pixel;
+    font-size: 70px;
+    z-index: 100;
+}
